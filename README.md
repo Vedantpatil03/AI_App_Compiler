@@ -1,54 +1,130 @@
-**AI App Builder**
+# 🚀 AI APP COMPILER
 
-AI App Builder is a small FastAPI-based project that demonstrates an LLM-driven pipeline for intent processing, validation, and simple dashboard/analytics endpoints. It's designed as a clear, interview-ready sample showing integration with an LLM client, pipeline modules, and an API surface suitable for demos and evaluations.
+An AI-powered system that converts natural language into a **structured, validated application schema** using a multi-stage pipeline.
 
-**Why This Project**
-- **Focus:** Shows LLM integration, prompt handling, and validation pipeline.
-- **Complete Stack:** API server, pipeline modules, and utility LLM client.
-- **Interview-Ready:** Clear setup, runnable locally, and testable endpoints.
+This project behaves like a **compiler for software generation**:
 
-**Quick Start**
-- Install dependencies:
+**Prompt → Intent → Architecture → Schema → Validation → Repair → JSON Output**
+
+---
+
+##  Objective
+
+Build a reliable system that transforms open-ended user instructions into a **complete, consistent, and usable application configuration**, including:
+
+* UI schema
+* API schema
+* Database schema
+* Authentication system
+* Business logic
+
+---
+
+## System Architecture
+
+The system follows a **multi-stage pipeline**:
+
+1. **Intent Extraction**
+
+   * Parses user input into structured intent
+
+2. **Schema Generation**
+
+   * Generates:
+
+     * UI structure
+     * API endpoints
+     * Database schema
+     * Auth + roles
+     * Business logic
+
+3. **Validation**
+
+   * Ensures:
+
+     * Valid JSON
+     * Required fields present
+     * Type correctness
+
+4. **Repair Engine**
+
+   * Fixes:
+
+     * Missing fields
+     * Schema inconsistencies
+     * Logical errors
+
+---
+
+## ⚙️ Tech Stack
+
+* **Backend:** FastAPI
+* **LLM:** Groq (Llama 3 models)
+* **Language:** Python
+* **Frontend:** Simple HTML + JS dashboard
+
+---
+
+## 🌐 Live Demo
+
+👉 [Live URL Here]
+
+---
+
+##  Installation
 
 ```bash
-python -m pip install -r requirements.txt
+git clone https://github.com/your-username/ai-app-compiler.git
+cd ai-app-compiler
+pip install -r requirements.txt
 ```
 
-- Set environment variables (example `.env`):
+---
 
-```
-GROQ_API_KEY=your_groq_api_key_here
+##  Environment Setup
+
+Create a `.env` file:
+
+```env
+GROQ_API_KEY=your_api_key_here
+MODEL_NAME=llama3-70b-8192
 ```
 
-- Run the app locally (use no space around the colon):
+---
+
+## ▶️ Run Locally
 
 ```bash
 uvicorn main:app --reload
 ```
 
-**API Endpoints**
-- **GET /contacts:** Get all contacts
-- **POST /contacts:** Create a new contact
-- **GET /dashboard:** Get dashboard data
-- **POST /payments:** Create a new payment
-- **GET /analytics:** Get analytics data
+Open:
 
-**Key Files**
-- `main.py` - FastAPI application and route definitions
-- `pipeline/intent.py` - Intent processing pipeline
-- `pipeline/repair.py` - Repair helpers for prompt outputs
-- `pipeline/schema.py` - Schema utilities
-- `pipeline/validator.py` - Validation logic
-- `utils/llm_client.py` - LLM client wrapper (Groq integration)
-- `models/schema_models.py` - Data models
+```
+http://127.0.0.1:8000
+```
 
-**Notes & Tips**
-- When launching with `uvicorn`, use `main:app` (no spaces) to avoid the "unexpected extra argument" error.
-- If prompts sometimes don't appear, check logs and ensure `utils/llm_client.py` responses are valid JSON (the client strips fences and comments). The project enforces strict JSON responses from the model.
+---
 
-**Contributing / Selection Tips**
-- Showcase your understanding by explaining how the pipeline validates and repairs LLM outputs.
-- Run the server and exercise the `/dashboard` and `/analytics` endpoints to demonstrate data flow.
+##  Example Prompt
 
-**License**
-- MIT
+```
+Build a SaaS project management tool with login, roles, dashboard, task board, and subscription plans.
+```
+
+---
+
+##  Example Output
+
+```json
+{
+  "ui_schema": {...},
+  "api_schema": {...},
+  "db_schema": {...},
+  "auth_schema": {...},
+  "business_logic": {...}
+}
+```
+
+---
+
