@@ -16,7 +16,6 @@ Build a reliable system that transforms open-ended user instructions into a **co
 * API schema
 * Database schema
 * Authentication system
-* Business logic
 
 ---
 
@@ -36,7 +35,7 @@ The system follows a **multi-stage pipeline**:
      * API endpoints
      * Database schema
      * Auth + roles
-     * Business logic
+     
 
 3. **Validation**
 
@@ -67,7 +66,7 @@ The system follows a **multi-stage pipeline**:
 
 ## 🌐 Live Demo
 
-👉 https://ai-app-compiler-ysbz.onrender.com/
+👉 https://ai-app-compiler-xte4.onrender.com/
 
 ---
 
@@ -121,9 +120,8 @@ Build a SaaS project management tool with login, roles, dashboard, task board, a
   "ui_schema": {...},
   "api_schema": {...},
   "db_schema": {...},
-  "auth_schema": {...},
-  "business_logic": {...}
-}
+  "auth_schema": {...}
+ }
 ```
 
 ---
