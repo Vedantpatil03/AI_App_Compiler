@@ -10,6 +10,7 @@ def generate_schema(intent_json):
     - ui_schema (pages, components)
     - api_schema (endpoints)
     - db_schema (tables)
+    - auth_schema (authentication rules, roles, tokens)
 
     Ensure valid JSON only.
     """
